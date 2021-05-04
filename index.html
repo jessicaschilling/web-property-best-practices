@@ -1,0 +1,407 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Guide: Web Property Lifecycle Best Practices</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+        <style>
+            li {margin-bottom:.5rem;}
+            li::marker {color:rgb(75, 85, 99);}
+            .emoji-list {text-indent:-2rem;}
+            .emoji-list ul {text-indent:0;}
+        </style>
+    </head>
+    <body class="p-12 max-w-5xl mx-auto text-gray-800 leading-snug">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <h1 class="text-4xl font-bold mb-6">Guide: Web Property Lifecycle Best Practices</h1>
+
+    <p class="mb-3"><strong>A six-phase guide to best practices for the full lifecycle of a website or app &mdash; from planning to sunset.</strong> Use these best practices to help you plan, scope, and business-justify new web properties of all sizes, from simple landing pages to complex web apps. This guide is ...</p>
+    <ul class="list-disc ml-10 mb-3">
+        <li><strong>Speed-focused:</strong> Use the emoji to help you balance speed vs quality</li>
+        <li><strong>Modular:</strong> Work the phases in series or parallel as you wish</li>
+        <li><strong>Good for generating quick business justifications:</strong> Start by answering the questions in the "Minimum Justifiable Product" boxes</li>
+    </ul>
+
+    <div class="rounded-md bg-yellow-200 text-gray-800 p-5 my-4">
+        <h4 class="text-l font-bold mb-2 uppercase">Emoji decoder key</h4>
+        <ul>
+            <li>⏰<span class="mr-2"></span>= bare minimum <em>(fastest turnaround, lowest value)</em></li>
+            <li>☝️<span class="mr-2"></span>= table stakes</li>
+            <li>💎<span class="mr-2"></span>= best practice for durable, high-value work</li>
+        </ul>
+    </div>
+    
+    <p><em>This guide was originally created by <a href="https://protocol.ai" target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">Protocol Labs</a> for internal purposes, but open-sourced for greater global usefulness. Drafted by Jessica Schilling and reviewed by José Bateira, Teri Chadbourne, Andy Schwab, Kadir Topal, and Chris Waring.</em> Want to suggest a change? <a href="https://github.com/jessicaschilling/web-property-best-practices" target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">Make a PR!</a></p>
+    
+    <h2 class="rounded-md text-3xl bg-yellow-600 text-white p-3 mt-12 mb-4 font-bold">Phase 1: Needs assessment</h2>
+    
+        <div class="rounded-md bg-gray-400 text-gray-900 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">⏰<span class="mr-2"></span>Minimum justifiable product</h3>
+                <ul class="list-disc ml-10">
+                        <li>What is the primary user story or <a href="https://jobs-to-be-done.com/jobs-to-be-done-a-framework-for-customer-needs-c883cbf61c90" target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">Job to Be Done</a>, and how does it <em>explicitly</em> contribute to a currently prioritized high-level outcome?</li>
+                        <li>Who are the customers (both stakeholders and users; these may be different), and are they high-value enough to focus on now given your org's current priorities?</li>
+                        <li>How do you justify the anticipated maintenance burden (code, content, montitoring, comms)?</li>
+                        <li>Are you confident based on the above that project can win executive approval? If not, save valuable org time and kill or icebox.</li>
+                    </ul>
+        </div>
+    
+        <div class="rounded-md bg-gray-200 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">Full best practices</h3>
+    
+                <h4 class="text-l font-bold mt-4 mb-2">JTBD/user story</h4>
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>To avoid premature solutioning, start the needs assessment process with a simple product definition stated as a problem/benefit sequence (e.g. user story or Job To Be Done)</li>
+                    </ul>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">Outcomes</h4>
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>What existing, executive-approved, high-level outcome is this work attached to?</li>
+                            <ul class="list-disc ml-4">
+                                <li>Is that outcome high enough on your org's current list of priorities to justify the work?</li>
+                                <li>Is the project <em>directly</em> enough attached to the high-level outcome? Can it be easily proven to move a needle or improve metrics for a current top goal?</li>
+                            </ul>
+                    </ul>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">Customers</h4>
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>Who are the stakeholders?</li>
+                            <ul class="list-disc ml-4">
+                                <li>Internal (possibly prioritizing for high-value parties based on current org goals)</li>
+                                <li>External (possibly prioritizing for high-value parties based on current org goals)</li>
+                            </ul>
+                        <li>⏰<span class="mr-2"></span>If the users are different from the stakeholders, are they high-value enough to your org to justify this project <em>right now</em>?</li>
+                        <li>⏰<span class="mr-2"></span>Are they someone else's users/stakeholders too — could you underwrite someone in the wider open-source community to do this work instead?</li>
+                        <li>☝️<span class="mr-2"></span>Do you know enough about them to be able to serve them well?</li>
+                            <ul class="list-disc ml-4">
+                                <li>If not, are you prepared as part of this project to do the research necessary?</li>
+                            </ul>
+                    </ul>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">Costs/benefits</h4>
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>Can an existing web property template (or a significant number of individual UI components) somewhere within the org be used to lessen time/labor cost?</li>
+                            <ul class="list-disc ml-4">
+                                <li>If not, does this project add value as the first example of a new template?</li>
+                            </ul>
+                        <li>⏰<span class="mr-2"></span>Can this product justify its maintenance burden?</li>
+                            <ul class="list-disc ml-4">
+                                <li>What's the <em>expected</em> and what's the <em>bare-minimum</em> cadence/frequency for updates and/or enhancements?</li>
+                                <li>Do you have a DRI (directly responsible individual) available for that amount of work going forward?</li>
+                                <li>Are you realistically prepared to promise minimum support until EOL, even considering any possible org re-prioritizations?</li>
+                            </ul>
+                        <li>☝️<span class="mr-2"></span>What's the differential between bare-minimum and preferred solution (in feature set, time, cost)? Are you prepared to accept bare minimum if we need to?</li>
+                        <li>☝️<span class="mr-2"></span>Can the benefits of this project be expressed quantitatively or qualitatively?</li>
+                            <ul class="list-disc ml-4">
+                                <li>If qualitatively, is it worth proceeding to spec phase knowing this project may be harder to justify?</li>
+                            </ul>
+                    </ul>
+        </div>
+    
+    <h2 class="rounded-md text-3xl bg-yellow-600 text-white p-3 mt-20 mb-4 font-bold">Phase 2: Goals and specs</h2>
+    
+        <div class="rounded-md bg-gray-400 text-gray-900 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">⏰<span class="mr-2"></span>Minimum justifiable product</h3>
+            <ul class="list-disc ml-10">
+                <li>What are your specific metrics for measuring project success?</li>
+                <li>What is the MVP feature set necessary to improve those metrics?</li>
+                <li>What existing sites/components/infra can be reused vs net-new work?</li>
+                <li>To what degree can the project be outsourced?</li>
+                <li>What are risks to project success? Are they acceptable? How to mitigate?</li>
+                <li>Can both launch and maintenance be adequately staffed?</li>
+                <li>What is your approved budget and/or hard calendar deadline?</li>
+                <li>Considering all of the above, what release deadline and overall project lifespan are you prepared to commit to?</li>
+            </ul>
+         </div>
+
+        <div class="rounded-md bg-gray-200 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">Full best practices</h3>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">High-level goals and risks</h4>
+                    <ul class="list-disc ml-8">
+                        <li>Considering the outcome, what proxies are you going to use to measure success?</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>⏰<span class="mr-2"></span>Define immediate success (to be used as initial "definition of done")</li>
+                                <li>☝️<span class="mr-2"></span>Define longer-term success (to be used as future key performance indicators)</li>
+                            </ul>
+                        <li>Define metrics first, so all specifications can be driven from them</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>⏰<span class="mr-2"></span>If a feature can't directly contribute to improving metrics, it should be discarded from scope</li>
+                            </ul>
+                        <li>Define possible risks to project, including severity of impact and whether they are acceptable/can be mitigated:</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>⏰<span class="mr-2"></span>Possible show-stoppers (both technical and otherwise)</li>
+                                <li>☝️<span class="mr-2"></span>Possible timeline blowouts</li>
+                                <li>💎<span class="mr-2"></span>Possible tech debt</li>
+                            </ul>
+                    </ul>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">Timeline and lifespan</h4>  
+                    <ul class="list-disc ml-8">
+                        <li>Define rough timeline</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>⏰<span class="mr-2"></span>Bare-minimum solution timeline</li>
+                                <li>☝️<span class="mr-2"></span>Preferred solution timeline</li>
+                                <li>☝️<span class="mr-2"></span>Use the differential between the two to help determine initial scope, particularly relative to anticipated budget</li>
+                                <li>💎<span class="mr-2"></span>If no hard deadline or budget cap, consider other factors that might determine timeline and/or scope (e.g. time until any known staffing changes, pressure to get the project out as a template for future work, etc)</li>
+                            </ul>
+                        <li>Define project lifespan: fixed, eternal?</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>⏰<span class="mr-2"></span>If fixed lifespan, define either sunset date or check-in date for determining sunset date</li>
+                                <li>☝️<span class="mr-2"></span>If eternal lifespan, define process and standards for periodic value assessment</li>
+                            </ul>
+                    </ul>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">Architecture</h4>        
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>Which template sites and/or existing UI components can be used to speed time-to-launch?</li>
+                            <ul class="list-disc ml-4">
+                                <li>How much customization (visual, functional) will be needed?</li>
+                            </ul>
+                        <li>How will <em>content</em> be added to the site (markdown-driven, JSON-driven, database-driven)?</li>
+                            <ul class="list-disc ml-4">
+                                <li>Is there an existing pipeline for that content flow, or is that net-new work?</li>
+                                <li>Do low-code content solutions (e.g. <a href="https://forestry.io" target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">Forestry</a>) need to be included (see below)?</li>
+                            </ul>
+                        <li>⏰<span class="mr-2"></span>What APIs will need to be used?</li>
+                            <ul class="list-disc ml-4">
+                                <li>Does tooling already exist for this?</li>
+                            </ul>
+                        <li>⏰<span class="mr-2"></span>Which org-wide processes/platforms need including?</li>
+                            <ul class="list-disc ml-4">
+                                <li>CI/CD pipelines</li>
+                                <li>Analytics (including whether existing dashboards can be cloned)</li>
+                                <li>Speed-testing or similar performance instrumentation</li>
+                                <li>Internationalization (including whether i18n must be complete at launch, or if community contribution later is OK)</li>
+                                <li>Do vendor agreements with any of the above need upgrading to accommodate extra traffic etc?</li>
+                            </ul>
+                    </ul>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">Resourcing</h4>        
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>Can the project build as a whole be outsourced?</li>
+                            <ul class="list-disc ml-4">
+                                <li>If not, business justification may be more difficult <em>and</em> may still need to budget for in-house project management and infra/launch support</li>
+                            </ul>
+                        <li>☝️<span class="mr-2"></span>How much user research needs to be done in order to confidently ship? Will you do dedicated user research first, or use a build-test-build methodology?</li>
+                            <ul class="list-disc ml-4">
+                                <li>If dedicated research phase, time-budget/assign DRIs and adjust timeline accordingly</li>
+                                <li>If build-test-build, understand the impact this could have on project velocity overall</li>
+                            </ul>
+                        <li>⏰<span class="mr-2"></span>Can existing org staff adequately support initial launch (infra, comms, marketing, social)?</li>
+                        <li>⏰<span class="mr-2"></span>Can ongoing maintenance be adequately supported internally/externally until sunset date (or indefinitely)?</li>
+                            <ul class="list-disc ml-4">
+                                <li>Maintenance includes code, content, metrics monitoring, social/marketing/community</li>
+                                <li>Define SLA for maintainer response</li>
+                                <li>How much technical expertise can be reasonably expected of content/social/marketing maintainers? Does spec need to expand in order to enable low-code contribution or maintenance?</li>
+                            </ul>
+                    </ul>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">Administrative/PM</h4>      
+                    <ul class="ml-12 emoji-list">
+                        <li>☝️<span class="mr-2"></span>Define launch plan (infra, comms, marketing, social) and time-budget/assign DRIs</li>
+                        <li>☝️<span class="mr-2"></span>Create rough financial budget for procurement consideration and contractor level-setting</li>
+                        <li>☝️<span class="mr-2"></span>Capture goals, timeline, architecture from above as formal PRD (product requirements document), to be used for:</li>
+                            <ul class="list-disc ml-4">
+                                <li>Internal business justification and/or procurement</li>
+                                <li>Brief to give potential contractors for issuing bids</li>
+                                <li>Generating issues/epics/acceptance criteria in build phase</li>
+                            </ul>
+                    </ul>
+        </div>
+        
+    <h2 class="rounded-md text-3xl bg-yellow-600 text-white p-3 mt-20 mb-4 font-bold">Phase 3: Build</h2>
+    
+        <div class="rounded-md bg-gray-400 text-gray-900 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">⏰<span class="mr-2"></span>Minimum justifiable product</h3>
+                <ul class="list-disc ml-10">
+                    <li>How will you build in the most modular, parallel, rescope-able way possible, using existing patterns whenever possible?</li>
+                    <li>How will you implement metrics collection and reporting <em>in parallel with build</em>?</li>
+                    <li>If user testing and/or internationalization/localization required, how will you plan and/or execute <em>in parallel with build</em>?</li>
+                    <li>Who is DRI for defining and backlogging tech debt <em>in parallel with build</em>?</li>
+                </ul>
+        </div>
+        
+        <div class="rounded-md bg-gray-200 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">Full best practices</h3>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">PM setup</h4>
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>Ensure MVP/shipping-first mindset with clearly defined, deliverable milestones along the way that demonstrate value to stakeholders/users</li>
+                        <li>☝️<span class="mr-2"></span>If user research/testing is to happen in build-test-build style, now is the time to plan for doing this in a way that minimizes the impact on project velocity overall</li>
+                            <ul class="list-disc ml-4">
+                                <li>Realize this may introduce a dependency on the availability of user testing partners</li>
+                            </ul>
+                        <li>☝️<span class="mr-2"></span>Assign DRI for project management and progress reporting</li>
+                        <li>💎<span class="mr-2"></span>Convert PRD DoDs (definitions of done) into issues, epics, acceptance criteria, etc, so executives can drop in at any time and understand progress</li>
+                    </ul>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">Architecture</h4>
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>Define/approve any data models necessary, using existing patterns whenever possible</li>
+                        <li>⏰<span class="mr-2"></span>Separate and assign work based on net-new code vs customization of existing components</li>
+                        <li>☝️<span class="mr-2"></span>Define any CI/CD, linting, other repo-level actions and set up as early as possible to avoid time crunches later</li>
+                    </ul>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">Administrative & reporting</h4>
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>Generate metrics dashboards and other reporting <em>as you build</em> and include as a launch requirement, not post-launch add-on</li>
+                        <li>⏰<span class="mr-2"></span>Install any other reporting (speed, accessibility, etc) <em>as you build</em></li>
+                        <li>☝️<span class="mr-2"></span>Set up internationalization workflow <em>as you build</em></li>
+                            <ul class="list-disc ml-4">
+                                <li>Do you have existing i18n patterns or resources elsewhere to duplicate, or does this need to be set up net-new?</li>
+                                <li>Is it necessary to fully localize prior to launch, or can translations etc happen via community contributions later?</li>
+                            </ul>
+                        <li>💎<span class="mr-2"></span>Install, set up, and confirm functionality of any maintainer alerts (e.g. metrics slippage, new content requests, community PRs, etc)</li>
+                    </ul>
+            
+                <h4 class="text-l font-bold mt-4 mb-2">Tech debt</h4>
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>Define, issue-ize, and backlog tech debt as it accumulates in order to keep a running total of post-launch responsibilities</li>
+                        <li>☝️<span class="mr-2"></span>Determine what can safely be rolled into maintenance phase and what must be included in DoD</li>
+                    </ul>
+        </div>
+
+    <h2 class="rounded-md text-3xl bg-yellow-600 text-white p-3 mt-20 mb-4 font-bold">Phase 4: Pre-release testing</h2>
+    
+        <div class="rounded-md bg-gray-400 text-gray-900 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">⏰<span class="mr-2"></span>Minimum justifiable product</h3>           
+                <ul class="list-disc ml-10">
+                    <li>What are your plans and timeline for functional testing (unit, integration)?</li>
+                    <li>What <em>high-value</em> inbound broken links will need to be repaired or redirected?</li>
+                </ul>
+        </div>
+        
+        <div class="rounded-md bg-gray-200 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">Full best practices</h3>
+
+                <h4 class="text-l font-bold mt-4 mb-2">User testing</h4>
+                    <ul class="list-disc ml-10">
+                        <li>Determine test methodology, balanced against effort required (<a href="https://www.designmethodstoolbox.com" class="text-blue-500 underline  target="_blank" rel="noopener noreferrer"">examples</a>)</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>☝️<span class="mr-2"></span>Qualitative vs quantitative methodology, moderated vs unmoderated, user testing vs concept testing, etc</li>
+                            </ul>
+                        <li>Recruit participants</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>⏰<span class="mr-2"></span>Do international privacy (GDPR, etc) regulations need to be considered?</li>
+                                <li>☝️<span class="mr-2"></span>Will extra time be needed to do synchronous testing (over Zoom, etc)?</li>
+                                <li>💎<span class="mr-2"></span>Any extra time/effort for paperwork: buying/sending gift cards, securing NDAs, etc?</li>
+                            </ul>
+                        <li>Create test artifacts as "minimum believable product"</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>☝️<span class="mr-2"></span>Which provides better agility and overall delivery velocity: test artifacts built with a design tool (e.g. Figma), or test artifacts built in basic code that can be used in build later?</li>
+                            </ul>
+                        <li>Do the tests</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>☝️<span class="mr-2"></span>Synthesize the test results</li>
+                                <li>☝️<span class="mr-2"></span>Generate next-steps recommendations</li>
+                                <li>💎<span class="mr-2"></span>Turn those recommendations into discrete issues that devs can implement</li>
+                            </ul>
+                        <li>Additional considerations for build-test-build situations:</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>☝️<span class="mr-2"></span>Define thresholds for when poor user test results can require product realignment/pause</li>
+                                <li>💎<span class="mr-2"></span>Determine cadence and plan overall dev work accordingly to avoid harming velocity</li>
+                            </ul>
+                    </ul>
+
+                <h4 class="text-l font-bold mt-4 mb-2">Functional testing</h4>
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>Unit and integration testing</li>
+                        <li>☝️<span class="mr-2"></span>Speed testing</li>
+                        <li>☝️<span class="mr-2"></span>Accessibility testing</li>
+                    </ul>
+
+                <h4 class="text-l font-bold mt-4 mb-2">Continuity testing</h4>
+                    <ul class="ml-12 emoji-list">
+                    <li>⏰<span class="mr-2"></span>Repair broken inbound links over which your org has control (e.g. in your other web properties, GitHub repos, etc)</li>
+                    <li>☝️<span class="mr-2"></span>Add redirects for important broken inbound links out of your control (may need immediate post-launch attention after monitoring 404 logs)</li>
+                    <li>💎<span class="mr-2"></span>Ensure other forms of social continuity aren't disrupted (e.g. RSS feeds, forum-posting bots, embedded content in other locations, etc)</li>
+                    </ul>
+
+        </div>
+    
+    <h2 class="rounded-md text-3xl bg-yellow-600 text-white p-3 mt-20 mb-4 font-bold">Phase 5: Launch, maintenance, enhancements</h2>
+    
+        <div class="rounded-md bg-gray-400 text-gray-900 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">⏰<span class="mr-2"></span>Minimum justifiable product</h3> 
+                <ul class="list-disc ml-10">
+                    <li>How will you budget for immediate post-launch bugfixes?</li>
+                    <li>If project lifespan is still TBD, what is your deadline and who is your DRI for making that decision?</li>
+                </ul>
+        </div>
+    
+        <div class="rounded-md bg-gray-200 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">Full best practices</h3>
+                <h4 class="text-l font-bold mt-4 mb-2">Immediate post-launch</h4>
+                <ul class="ml-12 emoji-list">
+                    <li>⏰<span class="mr-2"></span>Remember that initial maintenance/bugfix and enhancement responsibilities are likely to spike soon after launch as bugs and initial live user feedback emerge</li>
+                </ul>
+
+                <h4 class="text-l font-bold mt-4 mb-2">Ongoing maintenance</h4>
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>If project lifespan still TBD, set deadline and DRI for making that decision</li>
+                        <li>⏰<span class="mr-2"></span>If project lifespan is evergreen, commit to periodically assessing whether the maintenance burden is worth the benefit, and consider all forms of maintenance: code, content, monitoring, metrics action, social/marketing</li>
+                    </ul>
+
+                <h4 class="text-l font-bold mt-4 mb-2">Enhancements</h4>
+                    <ul class="ml-12 emoji-list">
+                    <li>☝️<span class="mr-2"></span>For enhancements, follow this best-practices guide again to the degree that it's practical</li>
+                    </ul>
+        </div>
+    
+    <h2 class="rounded-md text-3xl bg-yellow-600 text-white p-3 mt-20 mb-4 font-bold">Phase 6: Sunset</h2>
+
+        <div class="rounded-md bg-gray-400 text-gray-900 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">⏰<span class="mr-2"></span>Minimum justifiable product</h3>
+                <ul class="list-disc ml-10">
+                    <li>Are you sure EOLing product won't break anything that you or your high-value users can't live without?</li>
+                    <li>What is your plan for communicating with impacted users?</li>
+                    <li>What repos and other artifacts will need archiving? Who will revoke unneeded permissions and/or decommission infra?</li>
+                </ul>
+        </div>
+        
+        <div class="rounded-md bg-gray-200 p-5 my-4">
+            <h3 class="text-2xl font-bold mb-3">Full best practices</h3>
+        
+                <h4 class="text-l font-bold mt-4 mb-2">Scoping</h4>       
+                    <ul class="list-disc ml-8">
+                        <li>What user/stakeholder comms are needed to avoid disruption? Plan accordingly, both in terms of timeline and of required effort by internal/external resources. Examples may include:</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>☝️<span class="mr-2"></span>"This project is deprecated" landing page</li>
+                                <li>☝️<span class="mr-2"></span>Inbound link fixes</li>
+                                <li>💎<span class="mr-2"></span>Social/email/forum messaging before, during, after sunset (including monitoring for <em>x</em> weeks/months after the fact)</li>
+                            </ul>
+                        <li>Is another product replacing this one?</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>☝️<span class="mr-2"></span>If so, is it equipped to meet user/stakeholder needs, or does additional work need to be done on the replacement?</li>
+                            </ul>
+                        <li>Is EOL-ing anything in this project going to impact any internal or external/community dependencies ...</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>⏰<span class="mr-2"></span>To a degree of existential harm, or for a high-value item?</li>
+                                <li>💎<span class="mr-2"></span>To a degree of inconvenience?</li>
+                            </ul>
+                        <li>Can any infra services be decommissioned/scaled down as a result?</li>
+                            <ul class="ml-8 emoji-list">
+                                <li>⏰<span class="mr-2"></span>Will this happen automatically, or does anything need to be actioned?</li>
+                            </ul>
+                    </ul>
+
+                <h4 class="text-l font-bold mt-4 mb-2">Post-sunset cleanup</h4>
+                    <ul class="ml-12 emoji-list">
+                        <li>⏰<span class="mr-2"></span>Archive repos so no one accidentally opens issues, makes fixes, etc</li>
+                        <li>⏰<span class="mr-2"></span>Make sure any permissions no longer needed are revoked</li>
+                        <li>☝️<span class="mr-2"></span>Repair broken inbound links over which you have control (e.g. in your other web properties, GitHub repos, etc)</li>
+                        <li>💎<span class="mr-2"></span>Add redirects for important broken inbound links out of your control (may need immediate post-launch attention after monitoring 404 logs)</li>
+                    </ul>            
+  
+        </div>
+
+ </body>
+</html>
